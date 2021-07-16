@@ -1,0 +1,622 @@
+/*
+  页面基础样式相关的标签和类名
+  类名统一命名空间 .base-
+  @author libx@inke.com 2017-05-24
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+button,
+input {
+  font-family: '微软雅黑', 'Microsoft Yahei', sans-serif, 'Helvetica Neue',
+    Helvetica, STHeiTi;
+}
+/*
+  HTML5 重置
+*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  vertical-align: top;
+  object-fit: cover;
+}
+
+/*
+  基础重写
+*/
+html {
+  min-height: 100%;
+
+  /* 解决最小字体方案 */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+
+  /*解决移动端点击会有一闪的状态*/
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -ms-tap-highlight-color: transparent;
+  -o-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 37.5px; /*no*/
+}
+
+body {
+  min-height: 100%;
+  font-family: '微软雅黑', Microsoft YaHei, sans-serif, Source Sans Pro,
+    Helvetica, 'Helvetica Neue', STHeiTi;
+  /* 字体润滑度 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Safari浏览器将不显示链接有关的系统默认菜单 */
+  -webkit-touch-callout: none;
+  /* 禁止选中文本（如无文本选中需求，此为必选项）
+  -webkit-user-select: none;
+  user-select: none;*/
+
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  font-size: 28px; /* px */
+}
+
+[data-dpr='1'] body {
+  font-size: 14px;
+}
+[data-dpr='2'] body {
+  font-size: 28px;
+}
+[data-dpr='3'] body {
+  font-size: 42px;
+}
+
+input,
+select,
+button,
+textarea {
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+button::focus {
+  outline: none;
+}
+input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #e9eaee;
+}
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #e9eaee;
+}
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #e9eaee;
+}
+input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #e9eaee;
+}
+input::input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #e9eaee;
+}
+
+/* 清楚表单自动填充之后出现的背景黄色 */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-box-shadow: 0 0 0 999px #fff inset;
+  box-shadow: 0 0 0 999px #fff inset;
+}
+
+/*
+  ui
+*/
+.rtl {
+  direction: rtl;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.show-important {
+  display: block !important;
+}top-up-button
+.hide-important {
+  display: none !important;
+}
+.clearfix {
+  *zoom: 1;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: '';
+}
+.clearfix:after {
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/*单行样式溢出*/
+.base-text-over {
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 词内断句 */
+.base-break-text {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/* -------从这里开始------ */
+html,
+body,
+.main-body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.main-body {
+  background-image: url('../.././img.vins.live/MTU5MjUzNDg1Mjg3MCM3NTEjcG5n.png');
+  background-size: cover;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+/* pc端布局 */
+.pc-body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 117px 0 94px;
+}
+
+.pc-body .header-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 117px;
+  padding: 43px 118px 0;
+  box-sizing: border-box;
+}
+
+.pc-body .azizi-icon {
+  width: 174px;
+  height: 74px;
+}
+
+.pc-body .right-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.pc-body .recharge-button {
+  width: 167px;
+  height: 51px;
+  /* margin-right: 44px; */
+  background: linear-gradient(
+    50deg,
+    rgba(200, 147, 67, 1) 0%,
+    rgba(236, 203, 116, 1) 100%
+  );
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #fff;
+  line-height: 51px;
+  text-align: center;
+  cursor: pointer;
+  transition: filter 0.5s;
+}
+
+.pc-body .recharge-button:hover {
+  filter: brightness(0.7);
+}
+
+.pc-body .language-button {
+  width: 167px;
+  height: 51px;
+  background-image: url('../.././img.vins.live/MTU5MjUzODU4NDU4MyMxNTgjcG5n.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 18px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #fcc066;
+  line-height: 51px;
+  text-align: center;
+  cursor: pointer;
+  transition: filter 0.5s;
+}
+
+.pc-body .language-button:hover {
+  filter: brightness(0.7);
+}
+
+.pc-body .main-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.pc-body .app-name-icon {
+  width: 347px;
+  height: 164px;
+}
+
+.pc-body .app-tips {
+  margin-top: 21px;
+  font-size: 30px;
+  font-family: SFUIDisplay-Light, SFUIDisplay;
+  font-weight: 300;
+  color: #fff;
+  line-height: 36px;
+}
+
+.eid-mubarak {
+  margin-top: 21px;
+  font-size: 30px;
+  font-family: SFUIDisplay-Light, SFUIDisplay;
+  font-weight: 300;
+  background: -webkit-linear-gradient(#C89343, #ECCB74);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 36px;
+}
+
+.eid-gift {
+  margin-top: 21px;
+  font-size: 20px;
+  font-family: SFUIDisplay-Light, SFUIDisplay;
+  font-weight: bold;
+  background: -webkit-linear-gradient(#fff, #fffafa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 36px;
+  text-align: center;
+}
+
+.pc-body .main-button-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 129px;
+  width: 487px;
+}
+
+.pc-body .down-load-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 222px;
+  height: 79px;
+  background: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: filter 0.5s;
+}
+
+.pc-body .down-load-button:hover {
+  filter: brightness(0.7);
+}
+
+.pc-body .down-load-button-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.pc-body .down-load-button-text {
+  font-size: 21px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #262424;
+  line-height: 79px;
+}
+
+.pc-body .footer-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 94px;
+}
+
+.pc-body .footer-button-group {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 15px; */
+}
+
+.pc-body .footer-button-first {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.pc-body .footer-button {
+  padding: 0 10px;
+  color: #fff;
+  line-height: 22px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pc-body .footer-split-line {
+  line-height: 22px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 3px;
+}
+
+.pc-body .copy-right {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #fff;
+  line-height: 20px;
+  letter-spacing: 3px;
+}
+
+/* 移动端布局 */
+
+.mobile-body {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 12.47vw;
+  padding-bottom: 18.27vw;
+}
+
+.mobile-body .main-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.mobile-body .app-name-icon {
+  width: 47.73vw;
+  height: 22.4vw;
+}
+
+.mobile-body .app-tips {
+  font-size: 3vw;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(208, 208, 208, 1);
+  line-height: 5vw;
+  text-shadow: 0px 0px 1vw rgba(0, 0, 0, 0.5);
+}
+
+.mobile-body .footer-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 18.27vw;
+  padding: 0 5.07vw 5.47vw;
+  box-sizing: border-box;
+}
+
+.mobile-body .download-button {
+  width: 42.4vw;
+  height: 12.8vw;
+  background: linear-gradient(
+    50deg,
+    rgba(200, 147, 67, 1) 0%,
+    rgba(236, 203, 116, 1) 100%
+  );
+  border-radius: 2vw;
+  font-size: 4vw;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #fff;
+  line-height: 12.8vw;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mobile-body .top-up-button {
+  width: 42.4vw;
+  height: 12.8vw;
+  margin-left: 3vw;
+  background-image: url('../.././img.vins.live/MTU5MjUzODU4NDU4MyMxNTgjcG5n.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 2vw;
+  font-size: 4vw;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #fcc066;
+  line-height: 12.8vw;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* 768开始响应 */
+@media screen and (max-width: 768px) {
+  .pc-body {
+    display: none;
+  }
+  .mobile-body {
+    display: block;
+  }
+}
